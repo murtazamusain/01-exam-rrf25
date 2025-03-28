@@ -1,0 +1,200 @@
+@import 'tailwindcss';
+@theme {
+  /* 
+    primary = red
+    bg = pink
+    secondary = dark
+    secondaryGrey = dark Grey
+    assets = Grey
+    assetsGrey = medium Grey
+    text-white
+    */
+  --color-primary: #fc3314;
+  --color-bg: #ffd4d0;
+  --color-secondary: #1f1f1f;
+  --color-secondaryGrey: #8d8d8d;
+  --color-assets: #f7f7f7;
+  --color-assetsGrey: #e1e1e1;
+  --color-text: #fff;
+  --header-height: 110px;
+}
+@layer {
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+  body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    color: var(--color-secondary);
+    letter-spacing: 0.6px;
+  }
+  svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  ul {
+    font-weight: bold;
+  }
+  h1 {
+    font-weight: bold;
+    font-size: clamp(2.375rem, 1.4909rem + 3.3679vw, 4rem);
+  }
+  h2 {
+    font-weight: bold;
+    font-size: clamp(1.75rem, 1.0699rem + 2.5907vw, 3rem);
+    text-transform: capitalize;
+  }
+  h3 {
+    font-weight: bold;
+    font-size: clamp(1.25rem, 0.706rem + 2.0725vw, 2.25rem);
+  }
+  label {
+    text-transform: capitalize;
+    color: var(--color-secondary);
+    font-weight: bold;
+  }
+  .container {
+    max-width: 1192px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /*humberger style start*/
+  .bar1,
+  .bar3 {
+    width: 70%;
+    height: 5px;
+    background-color: var(--color-secondary);
+    transition: all 500ms;
+  }
+  .bar2 {
+    width: 100%;
+    height: 5px;
+    background-color: var(--color-secondary);
+    transition: all 500ms;
+  }
+  .change .bar2 {
+    opacity: 0;
+  }
+  .change .bar1 {
+    width: 100%;
+    transform: translate(0px, 13px) rotate(-45deg);
+  }
+  .change .bar3 {
+    width: 100%;
+    transform: translate(0px, -13px) rotate(45deg);
+  }
+  /*humberger style end*/
+  /* Testimonial Slider start */
+  .testimonial-carousel {
+    cursor: pointer;
+  }
+  .testimonial-carousel-prevAroow {
+    font-size: 40px;
+    position: absolute;
+    bottom: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+  }
+  .testimonial-carousel-nextAroow {
+    font-size: 40px;
+    position: absolute;
+    bottom: 50%;
+    right: -30px;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .testimonial-carousel .slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  .testimonial-carousel .slick-dots li {
+    list-style: none !important;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    cursor: pointer;
+    transition: all 400ms;
+  }
+  .testimonial-carousel .slick-dots .slick-active {
+    background-color: var(--color-primary);
+    width: 14px;
+    height: 14px;
+  }
+
+  .testimonial-carousel .slick-dots li button {
+    display: none;
+  }
+  /* Testimonial Slider end */
+  html {
+    scroll-behavior: smooth;
+  }
+  /* header css start */
+  .main-header {
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: block;
+    z-index: 13;
+    transition: all 400ms;
+  }
+  .main-header .container {
+    height: inherit;
+  }
+  /* header css end */
+  /* Extra Responsive for mobile */
+  @media only screen and (max-width: 768px) {
+    .main-menu {
+      position: absolute;
+      height: 200px;
+      z-index: 11;
+      background-color: var(--color-primary);
+      inset: 0;
+      margin: 50px 0px 0px 0px;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 600ms;
+    }
+    .main-menu-show {
+      visibility: visible;
+      opacity: 1;
+      margin-top: 110px;
+    }
+    .main-menu ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+    }
+    .main-menu ul li {
+      width: 100%;
+      height: 50px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .main-menu ul li a {
+      align-self: center;
+      margin: auto;
+      width: inherit;
+      height: inherit;
+      display: block;
+      padding: 0;
+      place-content: center;
+      background-color: var(--color-primary);
+      color: var(--color-text);
+      border-bottom: 1px solid white;
+      transition: all 400ms;
+    }
+    .main-menu ul li:last-child a {
+      border-bottom: 0px;
+    }
+    .main-menu ul li a:hover {
+      background-color: var(--color-secondary);
+    }
+  }
+}
