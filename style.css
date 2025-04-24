@@ -651,6 +651,9 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-bg {
+    border-color: var(--color-bg);
+  }
   .border-primary {
     border-color: var(--color-primary);
   }
