@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import 'tailwindcss';
 @theme {
   /* 
@@ -19,12 +20,10 @@
   --header-height: 110px;
 }
 @layer {
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
   body {
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.5;
+    line-height: 150%;
     color: var(--color-secondary);
-    letter-spacing: 0.6px;
   }
   svg {
     max-width: 100%;
@@ -38,9 +37,13 @@
     font-size: clamp(2.375rem, 1.4909rem + 3.3679vw, 4rem);
   }
   h2 {
-    font-weight: bold;
-    font-size: clamp(1.75rem, 1.0699rem + 2.5907vw, 3rem);
-    text-transform: capitalize;
+    color: black;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
   }
   h3 {
     font-weight: bold;
@@ -55,6 +58,11 @@
     max-width: 1192px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .h_2 {
+    font-weight: bold;
+    font-size: clamp(1.75rem, 1.0699rem + 2.5907vw, 3rem);
+    text-transform: capitalize;
   }
   /*humberger style start*/
   .bar1,
@@ -87,22 +95,28 @@
     cursor: pointer;
   }
   .testimonial-carousel-prevAroow {
-    font-size: 40px;
+    font-size: 32px;
     position: absolute;
-    bottom: 50%;
-    left: -30px;
+    bottom: 60%;
+    left: -67px;
     transform: translateY(-50%);
     z-index: 10;
     cursor: pointer;
   }
+  .testimonial-carousel-prevAroow::after {
+    content: '\276E';
+  }
   .testimonial-carousel-nextAroow {
-    font-size: 40px;
+    font-size: 32px;
     position: absolute;
-    bottom: 50%;
-    right: -30px;
+    bottom: 60%;
+    right: -69px;
     transform: translateY(-50%);
     z-index: 10;
     cursor: pointer;
+  }
+  .testimonial-carousel-nextAroow::after {
+    content: '\276F';
   }
 
   .testimonial-carousel .slick-dots {
@@ -123,8 +137,6 @@
   }
   .testimonial-carousel .slick-dots .slick-active {
     background-color: var(--color-primary);
-    width: 14px;
-    height: 14px;
   }
 
   .testimonial-carousel .slick-dots li button {
@@ -149,10 +161,10 @@
   }
   /* header css end */
   /* Extra Responsive for mobile */
-  @media only screen and (max-width: 768px) {
+  @media (max-width: 48rem) {
     .main-menu {
       position: absolute;
-      height: 200px;
+      /* height: 200px; */
       z-index: 11;
       background-color: var(--color-primary);
       inset: 0;

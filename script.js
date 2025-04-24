@@ -28,6 +28,6 @@ $('.testimonial-carousel').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   dots: true,
-  prevArrow: '<span class="testimonial-carousel-prevAroow">&#60</span>',
-  nextArrow: '<span class="testimonial-carousel-nextAroow">&#62</span>',
+  prevArrow: '<span class="testimonial-carousel-prevAroow"></span>',
+  nextArrow: '<span class="testimonial-carousel-nextAroow"></span>',
 });
